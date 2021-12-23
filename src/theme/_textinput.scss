@@ -1,0 +1,15 @@
+@use 'colors';
+
+.text-input {
+    display: flex;
+    align-items: center;
+    input {
+        flex: 1;
+        margin-left: .5rem;
+        border: 1px solid colors.$purple-500;
+    }
+}
+p.label {
+    font-size: small;
+    margin: .5rem 0 0 0;
+}

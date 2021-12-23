@@ -1,0 +1,59 @@
+@use 'colors';
+
+.home-container {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, colors.$purple-200, colors.$purple-200 45%, colors.$orange-200 55%);
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    .route-box {
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        .route-card {
+            box-shadow: colors.$black-opacity 0px 1px 2px, colors.$black-opacity 0px 2px 4px, colors.$black-opacity 0px 4px 8px, colors.$black-opacity 0px 8px 16px, colors.$black-opacity 0px 16px 32px, colors.$black-opacity 0px 32px 64px;
+            border-radius: 6px;
+            background-color: colors.$purple-50;
+            padding: 2rem;
+            width: min(400px, 100%);
+            margin: auto;
+            text-align: center;
+        }
+    }
+    .login-box {
+        text-align: right;
+        flex: 1;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        .login-card {
+            box-shadow: colors.$black-opacity 0px 1px 2px, colors.$black-opacity 0px 2px 4px, colors.$black-opacity 0px 4px 8px, colors.$black-opacity 0px 8px 16px, colors.$black-opacity 0px 16px 32px, colors.$black-opacity 0px 32px 64px;
+            border-radius: 6px;
+            background-color: colors.$purple-50;
+            padding: 2rem;
+            width: min(400px, 100%);
+            margin: auto;
+            text-align: center;
+            &.hidden {
+                opacity: 0;
+                pointer-events: none;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .home-container {
+        background-color: colors.$purple-200;
+        background-image: none;
+        .route-box, .login-box {
+            min-width: 100%;
+            min-height: 100vh;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+  }
