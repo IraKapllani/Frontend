@@ -29,7 +29,6 @@ export function Login(props) {
       }
       return res.data;
     }).then(resData => {
-      console.log(resData);
       localStorage.setItem("token", resData.token);
       localStorage.setItem("userId", resData.userId);
       setAppToken(resData.token);
