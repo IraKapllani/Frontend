@@ -113,7 +113,9 @@ export default function EditBook(props) {
     data.append("description", description.value);
     if (img.files[0])
       data.append("image", img.files[0]);
-    data.append("category", category);
+      for (let i = 0; i < category.length; i++) {
+        data.append("categories[]", category[i]);
+      }
     axios.put(`http://localhost:3001/admin/edit-books/`+id, data,
       {
         headers: {
@@ -143,7 +145,7 @@ export default function EditBook(props) {
           <input className="input-type-text" type="text" name="title"></input>
           <Select className="input-type-select" name="author" options={optionsAuthor} />
           <textarea className="input-type-text" name="description"></textarea>
-          <Select className="input-type-select" isMulti name="categories" options={optionsCategories} />
+          <Select className="input-type-select" isMulti  onChange={handleCategoryChange} name="categories" options={optionsCategories} />
           <input type="file"></input>
         </div>
         <div className="button-submit">
